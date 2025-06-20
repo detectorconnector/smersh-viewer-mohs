@@ -1,86 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohs Contracting LIVE – Owatonna, MN</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
-      text-align: center;
-    }
-    header {
-      background: #005f99;
-      color: #fff;
-      padding: 20px;
-    }
-    header img { height: 60px; vertical-align: middle; margin-right: 15px; }
-    h1 { display: inline-block; vertical-align: middle; margin: 0; }
-    .streams {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-    }
-    video {
-      background: #000;
-      width: 480px;
-      height: 270px;
-      border: 3px solid #ddd;
-      border-radius: 4px;
-    }
-    footer {
-      background: #eee;
-      padding: 15px;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <!-- Add your own logo file or change src -->
-    <img src="https://github.com/detectorconnector/smersh-viewer-mohs/blob/main/mohs-content/mohs-logo.png" alt="Mohs Contracting Logo" />
-    <h1>Mohs Contracting – Live Cameras</h1>
-  </header>
-
-  <section class="streams">
-    <div>
-      <h2>Camera 1</h2>
-      <video id="video1" controls autoplay muted></video>
-    </div>
-    <div>
-      <h2>Camera 2</h2>
-      <video id="video2" controls autoplay muted></video>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Mohs Contracting — 1330 State Ave NW, Owatonna, MN 55060 • (507) 446‑0023
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <script>
-    const streams = [
-      {videoId: 'video1', src: 'https://smersh.mohscontracting.com/pack-f-a/stream.m3u8'},
-      {videoId: 'video2', src: 'https://smersh.mohscontracting.com/pack-f-b/stream.m3u8'}
-    ];
-
-    streams.forEach(({videoId, src}) => {
-      const video = document.getElementById(videoId);
-      if (Hls.isSupported()) {
-        const hls = new Hls();
-        hls.loadSource(src);
-        hls.attachMedia(video);
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = src;
-      }
-    });
-  </script>
-
-</body>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url=https://www.mohscontracting.com/" />
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <p>If you're not redirected, <a href="https://www.mohscontracting.com/">click here</a>.</p>
+  </body>
 </html>

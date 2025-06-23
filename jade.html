@@ -97,11 +97,11 @@
   <section class="streams">
     <div>
       <h2>Camera 1</h2>
-      <video id="video1" controls autoplay muted></video>
+      <video id="video1" controls autoplay muted playsinline></video>
     </div>
     <div>
       <h2>Camera 2</h2>
-      <video id="video2" controls autoplay muted></video>
+      <video id="video2" controls autoplay muted playsinline></video>
     </div>
   </section>
 
@@ -112,18 +112,33 @@
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script>
     const streams = [
-      {videoId: 'video1', src: 'https://smersh.mohscontracting.com/pack-d-a/stream.m3u8'},
-      {videoId: 'video2', src: 'https://smersh.mohscontracting.com/pack-d-b/stream.m3u8'}
+      { videoId: 'video1', src: 'https://smersh.mohscontracting.com/pack-d-a/stream.m3u8' },
+      { videoId: 'video2', src: 'https://smersh.mohscontracting.com/pack-d-b/stream.m3u8' }
     ];
 
-    streams.forEach(({videoId, src}) => {
+    function attemptPlay(video) {
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.warn('Autoplay blocked:', error);
+        });
+      }
+    }
+
+    streams.forEach(({ videoId, src }) => {
       const video = document.getElementById(videoId);
       if (Hls.isSupported()) {
         const hls = new Hls();
         hls.loadSource(src);
         hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+          attemptPlay(video);
+        });
       } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
         video.src = src;
+        video.addEventListener('loadedmetadata', () => {
+          attemptPlay(video);
+        });
       }
     });
   </script>

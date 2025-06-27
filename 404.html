@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 – Page Not Found | Mohs Contracting LIVE</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #706967;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+    header img {
+      height: 60px;
+    }
+    .big-404 {
+      font-size: 6rem;
+      color: #888;
+      margin: 60px 0 20px;
+      animation: flicker 2s infinite;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    footer {
+      margin-top: auto;
+      background: #eee;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      45% { opacity: 0.75; }
+      50% { opacity: 0.5; }
+      55% { opacity: 0.75; }
+      100% { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      .big-404 {
+        font-size: 4rem;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="mohs-content/mohs-logo.png" alt="Mohs Contracting Logo" />
+    <h1>Mohs Contracting – Live Cameras</h1>
+  </header>
+
+  <main>
+    <div class="big-404">404</div>
+    <h1>This page wandered off the job site.</h1>
+    <p>We looked around, but the content you're after isn't here. Maybe it clocked out early. Try checking the address or refreshing the hard hat.</p>
+  </main>
+
+  <footer>
+    &copy; 2025 Mohs Contracting — 1330 State Ave NW, Owatonna, MN 55060 • (507) 446‑0023
+  </footer>
+
+</body>
+</html>
